@@ -1,8 +1,0 @@
-
-site = {
-
-};
-
-$(document).ready(function() {
-
-});

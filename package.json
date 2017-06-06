@@ -1,0 +1,21 @@
+{
+  "name": "blockster",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeger/blockster.git"
+  },
+  "author": "yeger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeger/blockster/issues"
+  },
+  "homepage": "https://github.com/yeger/blockster#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.6.0",
+    "run-sequence": "^1.2.2"
+  }
+}
