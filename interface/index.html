@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<title>Blockster</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/interface.css">
-	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="js/interface_functions.js"></script>
-</head>
-<body>
-	<div id="work_field"></div>
-	<div id="tools_sidebar">
-		<button id="create_block">Создать блок</button>
-	</div>
-
-
-	<div class="modal">
-
-	</div>
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blockster</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/blockster_plugins.css">
+        <link rel="stylesheet" href="css/blockster_app.css">
+    </head>
+    <body>
+        <div id="blockster_work_field"></div>
+        <div id="blockster_tools_sidebar">
+            <button class="site_btn" id="blockster_create_block" data-remodal-target="blockster_create_block">Создать блок</button>
+            <div id="blockster_blocks_list"></div>
+        </div>
+        <div id="blockster_tools_panel"></div>
+        <!-- crete block modal-->
+        <div class="remodal" data-remodal-id="blockster_create_block">
+            <div class="remodal__close" data-remodal-action="close"></div>
+            <div class="block_title">Создать блок</div>
+            <form action="#">
+                <div data-tabs="data-tabs">
+                    <div data-tabs-titles="data-tabs-titles">
+                        <div class="site_btn" data-tabs-title="html"></div>
+                        <div class="site_btn" data-tabs-title="bemjson"></div>
+                        <div class="site_btn" data-tabs-title="emmet"></div>
+                    </div>
+                    <div data-tabs-bodyes="data-tabs-bodyes">
+                        <div data-tabs-body="html">
+                            <div class="site_form_field">
+                                <input type="text" placeholder="Тег (по умолчанию div)" name="tag">
+                            </div>
+                            <div class="site_form_field">
+                                <input type="text" placeholder="Классы блока" name="class">
+                            </div>
+                            <div class="site_form_field">
+                                <textarea name="html" placeholder="html/текст"></textarea>
+                            </div>
+                        </div>
+                        <div data-tabs-body="bemjson">
+                            <div class="site_form_field">
+                                <textarea name="bemjson" placeholder="bemjson"></textarea>
+                            </div>
+                        </div>
+                        <div data-tabs-body="emmet">
+                            <div class="site_form_field">
+                                <textarea name="emmet" placeholder="emmet"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site_form_field site_form_field--submit">
+                    <div class="flex_container jc_sb ai_fs">
+                        <button class="site_btn big" type="submit">Создать</button>
+                        <button class="site_btn big" type="reset">Почистить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- [+] js-->
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/blockster_plugins.js"></script>
+        <script type="text/javascript" src="js/blockster_app.js"></script>
+        <!-- [-] js-->
+    </body>
 </html>

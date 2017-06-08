@@ -1,0 +1,215 @@
+@charset "utf-8";
+@import "includes/mixins"
+
+/*!----------------------------------------*/
+$site_dark = #4D4D4D;
+$site_dark2 = #676767;
+$site_green = #17A05E;
+$body_scroll_color = #676767;
+$body_bg = #fff;
+$body_color = #000;
+$body_font_size = 14px;
+$body_font_family = "Trebuchet MS", Arial, Helvetica, sans-serif;
+$tools_sidebar_width = 300px;
+$tools_panel_width = 60px;
+$tools_sidebar_bg = #4d4d4d;
+$tools_sidebar_border = $body_scroll_color;
+$tools_sidebar_padding = 20px;
+$button_bg = $body_scroll_color;
+
+/*!----------------------------------------*/
+
+*
+	&::-webkit-scrollbar
+		-webkit-appearance none
+
+	&::-webkit-scrollbar:vertical
+		width 8px
+
+	&::-webkit-scrollbar:horizontal
+		height 8px
+
+	&::-webkit-scrollbar-thumb
+		background-color $body_scroll_color
+
+/*! ↓↓↓----------------------- main -----------------------↓↓↓ */
+
+body
+	background $body_bg
+	color $body_color
+	font-size $body_font_size
+	font-family $body_font_family
+
+#blockster_tools_sidebar
+	width $tools_sidebar_width
+	background $tools_sidebar_bg
+	position fixed
+	right 0
+	top 0
+	bottom 0
+	overflow-y auto
+	border-left 2px solid $tools_sidebar_border
+	box-sizing border-box
+	padding $tools_sidebar_padding
+
+#blockster_tools_panel
+	position absolute
+	right $tools_sidebar_width
+	top 0
+	bottom 0
+	width $tools_panel_width
+	background $site_dark2
+	box-sizing border-box
+	padding 10px
+
+#blockster_work_field
+	padding 20px
+	margin-right 20px
+	padding-right unit($tools_sidebar_width + $tools_panel_width, px)
+
+
+#blockster_blocks_list
+	margin-top 20px
+
+._blockster_block
+
+	color #fff
+	padding 5px 10px
+	padding-left 40px
+	margin-bottom 2px
+	background $site_dark2
+	position relative
+
+	.open_close_tag
+
+		cursor pointer
+		position absolute
+		left 0
+		top 0
+		height 100%
+		width 30px
+
+		&:before
+		&:after
+			content ''
+			position absolute
+			width 3px
+			height 15px
+			background $site_green
+			center_absolute_tr()
+
+		&:after
+			height 3px
+			width 15px
+
+	&--opened
+		.open_close_tag:before
+			content none
+
+/*!----------------------------------------*/
+
+._blockster_highlight
+._blockster_select
+	outline 2px solid $site_green
+
+/*! ↓↓↓----------------------- form elems -----------------------↓↓↓ */
+
+.site_btn
+
+	outline none
+	padding 7px 10px
+	background $button_bg
+	color #fff
+	border none
+	font-size 13px
+	cursor pointer
+	ib(top)
+
+	&.big
+		font-size 20px
+		padding 10px 30px
+
+	&:hover
+	&:focus
+	&.active
+		background $site_green
+
+	&.active
+		cursor default
+
++inputs()
+	outline none
+	box-sizing border-box
+	padding 8px 20px
+	border 1px solid #999
+
+textarea
+	resize none
+
+.block_title
+	font-size 25px
+	margin-bottom 20px
+	font-weight bold
+
+.site_form_field
+
+	margin-bottom 20px
+
+	&--submit
+		margin-bottom 0
+
+/*! ↓↓↓----------------------- modal -----------------------↓↓↓ */
+
+.remodal
+
+	text-align left
+	position relative
+
+	+inputs()
+		width 100%
+
+	textarea
+		height 200px
+
+	&__close
+		cursor pointer
+		position absolute
+		right 20px
+		top 20px
+		width 30px
+		height 30px
+		transform rotate(45deg)
+
+		&:before
+		&:after
+			content ''
+			position absolute
+			height 100%
+			width 2px
+			background #000
+			center_absolute_tr()
+
+		&:after
+			width 100%
+			height 2px
+
+/*! ↓↓↓----------------------- tabs -----------------------↓↓↓ */
+
+[data-tabs-titles]
+	font-size 0
+	margin-bottom 20px
+
+[data-tabs-title]
+
+	+ *
+		margin-left 2px
+
+	&:before
+		content attr(data-tabs-title)
+
+[data-tabs-body]
+	display none
+
+/*!----------------------------------------*/
+
+@import "includes/flexbox_classes"

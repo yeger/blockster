@@ -1,0 +1,188 @@
+.flex_container
+
+	display flex
+
+	//----------------------------------------
+
+	&.fw_w
+		flex-wrap wrap
+
+	&.fw_nw
+		flex-wrap nowrap
+
+	&.fw_wr
+		flex-wrap wrap-reverse
+
+	//----------------------------------------
+
+	&.fd_r
+		flex-direction row
+
+	&.fd_rr
+		flex-direction row-reverse
+
+	&.fd_c
+		flex-direction column
+
+	&.fd_cr
+		flex-direction column-reverse
+
+	//----------------------------------------
+
+	&.jc_sb
+		justify-content space-between
+
+	&.jc_fs
+		justify-content flex-start
+
+	&.jc_fe
+		justify-content flex-end
+
+	&.jc_sa
+		justify-content space-around
+
+	&.jc_c
+		justify-content center
+
+	//----------------------------------------
+
+	&.ai_c
+		align-items center
+
+	&.ai_fs
+		align-items flex-start
+
+	&.ai_fe
+		align-items flex-end
+
+	&.ai_s
+		align-items stretch
+
+	&.ai_b
+		align-items baseline
+
+	//----------------------------------------
+
+	&.ac_fs
+		align-content flex-start
+
+	&.ac_fe
+		align-content flex-end
+
+	&.ac_c
+		align-content center
+
+	&.ac_sb
+		align-content space-between
+
+	&.ac_sa
+		align-content space-around
+
+	&.ac_s
+		align-content stretch
+
+	//----------------------------------------
+
+	>
+
+		&.as_a
+			align-self auto
+
+		&.as_fs
+			align-self flex-start
+
+		&.as_fe
+			align-self flex-end
+
+		&.as_c
+			align-self center
+
+		&.as_b
+			align-self baseline
+
+		&.as_s
+			align-self stretch
+
+		//----------------------------------------
+
+		&.fl_1
+			flex 1
+
+		&.fl_1_0_a
+			flex 1 0 auto
+
+		&.fl_0_1_a
+			flex 0 1 auto
+
+		&.fl_1_1_a
+			flex 1 1 auto
+
+		&.fl_1_1_0per
+			flex 1 1 0%
+
+		&.fl_1_0_0per
+			flex 1 0 0%
+
+		&.fl_0_1_0per
+			flex 0 1 0%
+
+		&.fl_0_0_0per
+			flex 0 0 0%
+
+		//----------------------------------------
+
+		&.fl_n
+			flex none
+
+		&.fl_u
+			flex unset
+
+		&.fl_inh
+			flex inherit
+
+		&.fl_ini
+			flex initial
+
+		//----------------------------------------
+
+		&.fb_a
+			flex-basis auto
+
+		&.fb_0per
+			flex-basis 0%
+
+		&.fb_25per
+			flex-basis 25%
+
+		&.fb_33per
+			flex-basis 33.3%
+
+		&.fb_50per
+			flex-basis 50%
+
+		&.fb_100per
+			flex-basis 100%
+
+		//----------------------------------------
+
+		&.or_inh
+			order inherit
+
+		&.or_ini
+			order initial
+
+		for o in (0..10)
+			&.or_{o}
+				order o
+
+		//----------------------------------------
+
+		for fg in (0..10)
+			&.fg_{fg}
+				flex-grow fg
+
+		//----------------------------------------
+
+		for i in (0..10)
+			&.fs_{i}
+				flex-shrink i

@@ -1,0 +1,116 @@
+reset_list(p = 0, m = 0)
+	margin m
+	padding p
+	list-style none
+
+cover_absolute(px)
+	position absolute
+	left px
+	right px
+	top px
+	bottom px
+
+center_absolute_x()
+	left 50%
+	margin-left unit( - @height / 2, px)
+
+center_absolute_y()
+	top 50%
+	margin-top unit( - @height / 2, px)
+
+center_absolute_x_tr()
+	left 50%
+	transform translateX(-50%)
+
+center_absolute_y_tr()
+	top 50%
+	transform translateY(-50%)
+
+center_absolute()
+	left 50%
+	top 50%
+	margin-top unit( - @height / 2, px)
+	margin-left unit( - @width / 2, px)
+
+center_absolute_tr()
+	left 50%
+	top 50%
+	transform translate(-50%, -50%)
+
+inputs()
+	textarea,
+	select,
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="url"],
+	input[type="tel"]
+		{block}
+
+htags()
+	for key, value in htagsFz
+		{key},
+		.{key}
+			font-size : value
+
+placeholder()
+	&.placeholder
+		{block}
+	&:-moz-placeholder
+		{block}
+	&::-moz-placeholder
+		{block}
+	&:-ms-input-placeholder
+		{block}
+	&::-webkit-input-placeholder
+		{block}
+
+ib(vpos)
+	display inline-block
+	vertical-align vpos
+
+br_figure(col = #000, dir = top, width = 8px, height = 8px)
+
+	width 0
+	height 0
+
+	if dir == left
+		border-right width solid col
+		border-top height solid transparent
+		border-bottom height solid transparent
+
+	if dir == right
+		border-left width solid col
+		border-top height solid transparent
+		border-bottom height solid transparent
+
+	if dir == top
+		border-bottom width solid col
+		border-left height solid transparent
+		border-right height solid transparent
+
+	if dir == bottom
+		border-top width solid col
+		border-left height solid transparent
+		border-right height solid transparent
+
+	if dir == topleft
+		border-top width solid col
+		border-right height solid transparent
+
+	if dir == topright
+		border-top width solid col
+		border-left height solid transparent
+
+	if  dir == bottomleft
+		border-bottom width solid col
+		border-right height solid transparent
+
+	if dir == bottomright
+		border-bottom width solid col
+		border-left height solid transparent
+
+gradient()
+	background-image linear-gradient(arguments)

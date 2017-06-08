@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		title Blockster
+		link(rel="stylesheet" href="css/normalize.css")
+		link(rel="stylesheet" href="css/blockster_plugins.css")
+		link(rel="stylesheet" href="css/blockster_app.css")
+	body
+
+		#blockster_work_field
+
+		#blockster_tools_sidebar
+
+			button.site_btn(id="blockster_create_block" data-remodal-target="blockster_create_block") Создать блок
+			#blockster_blocks_list
+
+		#blockster_tools_panel
+
+		// crete block modal
+		.remodal(data-remodal-id="blockster_create_block")
+
+			.remodal__close(data-remodal-action="close")
+
+			.block_title Создать блок
+
+			form(action="#")
+
+				div(data-tabs)
+
+					div(data-tabs-titles)
+						div(data-tabs-title="html").site_btn
+						div(data-tabs-title="bemjson").site_btn
+						div(data-tabs-title="emmet").site_btn
+
+					div(data-tabs-bodyes)
+						div(data-tabs-body="html")
+							div(block="site_form_field")
+								input(type="text" placeholder="Тег (по умолчанию div)" name="tag")
+
+							div(block="site_form_field")
+								input(type="text" placeholder="Классы блока" name="class")
+
+							div(block="site_form_field")
+								textarea(name="html" placeholder="html/текст")
+
+						div(data-tabs-body="bemjson")
+							div(block="site_form_field")
+								textarea(name="bemjson" placeholder="bemjson")
+
+						div(data-tabs-body="emmet")
+							div(block="site_form_field")
+								textarea(name="emmet" placeholder="emmet")
+
+				div(block="site_form_field" mod='submit')
+					.flex_container.jc_sb.ai_fs
+						button(type="submit").site_btn.big Создать
+						button.site_btn.big(type="reset") Почистить
+
+		// [+] js
+		script(type="text/javascript" src="js/jquery-2.1.4.min.js")
+		script(type="text/javascript" src="js/blockster_plugins.js")
+		script(type="text/javascript" src="js/blockster_app.js")
+		// [-] js
+
+
+

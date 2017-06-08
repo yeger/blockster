@@ -1,0 +1,450 @@
+@charset "utf-8";
+/*----------------------------------------*/
+/*----------------------------------------*/
+*::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+*::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+*::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #676767;
+}
+/* ↓↓↓----------------------- main -----------------------↓↓↓ */
+body {
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#blockster_tools_sidebar {
+  width: 300px;
+  background: #4d4d4d;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  border-left: 2px solid #676767;
+  box-sizing: border-box;
+  padding: 20px;
+}
+#blockster_tools_panel {
+  position: absolute;
+  right: 300px;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: #676767;
+  box-sizing: border-box;
+  padding: 10px;
+}
+#blockster_work_field {
+  padding: 20px;
+  margin-right: 20px;
+  padding-right: 360px;
+}
+#blockster_blocks_list {
+  margin-top: 20px;
+}
+._blockster_block {
+  color: #fff;
+  padding: 5px 10px;
+  padding-left: 40px;
+  margin-bottom: 2px;
+  background: #676767;
+  position: relative;
+}
+._blockster_block .open_close_tag {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 30px;
+}
+._blockster_block .open_close_tag:before,
+._blockster_block .open_close_tag:after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: #17a05e;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+._blockster_block .open_close_tag:after {
+  height: 3px;
+  width: 15px;
+}
+._blockster_block--opened .open_close_tag:before {
+  content: none;
+}
+/*----------------------------------------*/
+._blockster_highlight,
+._blockster_select {
+  outline: 2px solid #17a05e;
+}
+/* ↓↓↓----------------------- form elems -----------------------↓↓↓ */
+.site_btn {
+  outline: none;
+  padding: 7px 10px;
+  background: #676767;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+}
+.site_btn.big {
+  font-size: 20px;
+  padding: 10px 30px;
+}
+.site_btn:hover,
+.site_btn:focus,
+.site_btn.active {
+  background: #17a05e;
+}
+.site_btn.active {
+  cursor: default;
+}
+textarea,
+select,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+input[type="tel"] {
+  outline: none;
+  box-sizing: border-box;
+  padding: 8px 20px;
+  border: 1px solid #999;
+}
+textarea {
+  resize: none;
+}
+.block_title {
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.site_form_field {
+  margin-bottom: 20px;
+}
+.site_form_field--submit {
+  margin-bottom: 0;
+}
+/* ↓↓↓----------------------- modal -----------------------↓↓↓ */
+.remodal {
+  text-align: left;
+  position: relative;
+}
+.remodal textarea,
+.remodal select,
+.remodal input[type="text"],
+.remodal input[type="password"],
+.remodal input[type="email"],
+.remodal input[type="number"],
+.remodal input[type="search"],
+.remodal input[type="url"],
+.remodal input[type="tel"] {
+  width: 100%;
+}
+.remodal textarea {
+  height: 200px;
+}
+.remodal__close {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+}
+.remodal__close:before,
+.remodal__close:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: #000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.remodal__close:after {
+  width: 100%;
+  height: 2px;
+}
+/* ↓↓↓----------------------- tabs -----------------------↓↓↓ */
+[data-tabs-titles] {
+  font-size: 0;
+  margin-bottom: 20px;
+}
+[data-tabs-title] + * {
+  margin-left: 2px;
+}
+[data-tabs-title]:before {
+  content: attr(data-tabs-title);
+}
+[data-tabs-body] {
+  display: none;
+}
+/*----------------------------------------*/
+.flex_container {
+  display: flex;
+}
+.flex_container.fw_w {
+  flex-wrap: wrap;
+}
+.flex_container.fw_nw {
+  flex-wrap: nowrap;
+}
+.flex_container.fw_wr {
+  flex-wrap: wrap-reverse;
+}
+.flex_container.fd_r {
+  flex-direction: row;
+}
+.flex_container.fd_rr {
+  flex-direction: row-reverse;
+}
+.flex_container.fd_c {
+  flex-direction: column;
+}
+.flex_container.fd_cr {
+  flex-direction: column-reverse;
+}
+.flex_container.jc_sb {
+  justify-content: space-between;
+}
+.flex_container.jc_fs {
+  justify-content: flex-start;
+}
+.flex_container.jc_fe {
+  justify-content: flex-end;
+}
+.flex_container.jc_sa {
+  justify-content: space-around;
+}
+.flex_container.jc_c {
+  justify-content: center;
+}
+.flex_container.ai_c {
+  align-items: center;
+}
+.flex_container.ai_fs {
+  align-items: flex-start;
+}
+.flex_container.ai_fe {
+  align-items: flex-end;
+}
+.flex_container.ai_s {
+  align-items: stretch;
+}
+.flex_container.ai_b {
+  align-items: baseline;
+}
+.flex_container.ac_fs {
+  align-content: flex-start;
+}
+.flex_container.ac_fe {
+  align-content: flex-end;
+}
+.flex_container.ac_c {
+  align-content: center;
+}
+.flex_container.ac_sb {
+  align-content: space-between;
+}
+.flex_container.ac_sa {
+  align-content: space-around;
+}
+.flex_container.ac_s {
+  align-content: stretch;
+}
+.flex_container >.as_a {
+  align-self: auto;
+}
+.flex_container >.as_fs {
+  align-self: flex-start;
+}
+.flex_container >.as_fe {
+  align-self: flex-end;
+}
+.flex_container >.as_c {
+  align-self: center;
+}
+.flex_container >.as_b {
+  align-self: baseline;
+}
+.flex_container >.as_s {
+  align-self: stretch;
+}
+.flex_container >.fl_1 {
+  flex: 1;
+}
+.flex_container >.fl_1_0_a {
+  flex: 1 0 auto;
+}
+.flex_container >.fl_0_1_a {
+  flex: 0 1 auto;
+}
+.flex_container >.fl_1_1_a {
+  flex: 1 1 auto;
+}
+.flex_container >.fl_1_1_0per {
+  flex: 1 1 0%;
+}
+.flex_container >.fl_1_0_0per {
+  flex: 1 0 0%;
+}
+.flex_container >.fl_0_1_0per {
+  flex: 0 1 0%;
+}
+.flex_container >.fl_0_0_0per {
+  flex: 0 0 0%;
+}
+.flex_container >.fl_n {
+  flex: none;
+}
+.flex_container >.fl_u {
+  flex: unset;
+}
+.flex_container >.fl_inh {
+  flex: inherit;
+}
+.flex_container >.fl_ini {
+  flex: initial;
+}
+.flex_container >.fb_a {
+  flex-basis: auto;
+}
+.flex_container >.fb_0per {
+  flex-basis: 0%;
+}
+.flex_container >.fb_25per {
+  flex-basis: 25%;
+}
+.flex_container >.fb_33per {
+  flex-basis: 33.3%;
+}
+.flex_container >.fb_50per {
+  flex-basis: 50%;
+}
+.flex_container >.fb_100per {
+  flex-basis: 100%;
+}
+.flex_container >.or_inh {
+  order: inherit;
+}
+.flex_container >.or_ini {
+  order: initial;
+}
+.flex_container >.or_0 {
+  order: 0;
+}
+.flex_container >.or_1 {
+  order: 1;
+}
+.flex_container >.or_2 {
+  order: 2;
+}
+.flex_container >.or_3 {
+  order: 3;
+}
+.flex_container >.or_4 {
+  order: 4;
+}
+.flex_container >.or_5 {
+  order: 5;
+}
+.flex_container >.or_6 {
+  order: 6;
+}
+.flex_container >.or_7 {
+  order: 7;
+}
+.flex_container >.or_8 {
+  order: 8;
+}
+.flex_container >.or_9 {
+  order: 9;
+}
+.flex_container >.or_10 {
+  order: 10;
+}
+.flex_container >.fg_0 {
+  flex-grow: 0;
+}
+.flex_container >.fg_1 {
+  flex-grow: 1;
+}
+.flex_container >.fg_2 {
+  flex-grow: 2;
+}
+.flex_container >.fg_3 {
+  flex-grow: 3;
+}
+.flex_container >.fg_4 {
+  flex-grow: 4;
+}
+.flex_container >.fg_5 {
+  flex-grow: 5;
+}
+.flex_container >.fg_6 {
+  flex-grow: 6;
+}
+.flex_container >.fg_7 {
+  flex-grow: 7;
+}
+.flex_container >.fg_8 {
+  flex-grow: 8;
+}
+.flex_container >.fg_9 {
+  flex-grow: 9;
+}
+.flex_container >.fg_10 {
+  flex-grow: 10;
+}
+.flex_container >.fs_0 {
+  flex-shrink: 0;
+}
+.flex_container >.fs_1 {
+  flex-shrink: 1;
+}
+.flex_container >.fs_2 {
+  flex-shrink: 2;
+}
+.flex_container >.fs_3 {
+  flex-shrink: 3;
+}
+.flex_container >.fs_4 {
+  flex-shrink: 4;
+}
+.flex_container >.fs_5 {
+  flex-shrink: 5;
+}
+.flex_container >.fs_6 {
+  flex-shrink: 6;
+}
+.flex_container >.fs_7 {
+  flex-shrink: 7;
+}
+.flex_container >.fs_8 {
+  flex-shrink: 8;
+}
+.flex_container >.fs_9 {
+  flex-shrink: 9;
+}
+.flex_container >.fs_10 {
+  flex-shrink: 10;
+}
